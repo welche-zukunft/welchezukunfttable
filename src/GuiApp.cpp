@@ -22,9 +22,9 @@ void GuiApp::update() {
 
 void GuiApp::draw() {
 	ofSetColor(34, 34, 255);
-	ofRectRounded(ofMap(*posx, xLeftTop, xRightBottom, 0, ofGetWidth()), ofMap(*posy, yLeftTop, yLeftBottom, 0, ofGetHeight()), 0, 250, 150, 15);
+	ofDrawRectRounded(ofMap(*posx, xLeftTop, xRightBottom, 0, ofGetWidth()), ofMap(*posy, yLeftTop, yLeftBottom, 0, ofGetHeight()), 0, 250, 150, 15);
 	ofSetColor(255, 0, 0);
-	ofCircle(ofMap(*posx, xLeftTop, xRightBottom, 0, ofGetWidth()), ofMap(*posy, yLeftTop, yLeftBottom, 0, ofGetHeight()), 10);
+	ofDrawCircle(ofMap(*posx, xLeftTop, xRightBottom, 0, ofGetWidth()), ofMap(*posy, yLeftTop, yLeftBottom, 0, ofGetHeight()), 10);
 	ofSetColor(255, 255, 255);
 	font.drawString("welche zukunft", ofMap(*posx, xLeftTop, xRightBottom, 0, ofGetWidth())+20, ofMap(*posy, yLeftTop, yLeftBottom, 0, ofGetHeight())+20);
 }
