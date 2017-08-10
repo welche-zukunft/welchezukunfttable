@@ -30,7 +30,7 @@ void zukunftBlock::draw() {
 	roundedRect(position.x, position.y, position.z, sizex, sizey, 2);
 	ofPoint contactLine = position;
 	contactLine.y = 0.;
-	ofLine(position, contactLine);
+	ofDrawLine(position, contactLine);
 	ofSetColor(255, 255, 255);
 	ofDrawBitmapString(content, position);
 
