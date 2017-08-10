@@ -236,7 +236,7 @@ void ofApp::draw() {
 
 		contourFinder.draw(10, 320, 400, 300);
 
-		ofCircle(ofMap(*posx, 0, 640, 420, 820), ofMap(*posy, 0, 480, 320, 620), 20);
+		ofDrawCircle(ofMap(*posx, 0, 640, 420, 820), ofMap(*posy, 0, 480, 320, 620), 20);
 
 
 #ifdef USE_TWO_KINECTS
