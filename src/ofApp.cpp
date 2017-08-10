@@ -98,7 +98,7 @@ void ofApp::setup() {
 void ofApp::update() {
 
 	
-	/*cv::SimpleBlobDetector::Params params;
+	cv::SimpleBlobDetector::Params params;
 	params.minThreshold = 10;
 	params.filterByArea = true;
 	params.minArea = 20;
@@ -107,7 +107,7 @@ void ofApp::update() {
 	params.filterByColor = false;
 
 
-	cv::SimpleBlobDetector detector(params);*/
+	cv::SimpleBlobDetector detector(params);
 
 	ofBackground(100, 100, 100);
 	kinect.update();
@@ -140,26 +140,26 @@ void ofApp::update() {
 		
 		// update the cv images
 		grayImage.flagImageChanged();
-		//kinectImg = kinect.getPixels();
+		kinectImg = kinect.getPixels();
 		//cv::Mat im = grayImage.getCvImage();
 		
 		
 		
-		/*cv::Mat im = kinectImg.getCvImage();
+		cv::Mat im = kinectImg.getCvImage();
 		detector.detect(im, keypoints);
 		test = keypoints.size();
 		cv::Mat imWith;
 		drawKeypoints(im, keypoints, imWith, cv::Scalar(0, 0, 255), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
 
 
-		colorImg.setFromPixels((unsigned char *)IplImage(imWith).imageData, imWith.size().width, imWith.size().height); // , OF_IMAGE_COLOR);*/
+		colorImg.setFromPixels((unsigned char *)IplImage(imWith).imageData, imWith.size().width, imWith.size().height); // , OF_IMAGE_COLOR);
 
 		//*(grayImage.getCvImage()) = imWith;
 		
 		
 		// find contours which are between the size of 20 pixels and 1/3 the w*h pixels.
 		// also, find holes is set to true so we will get interior contours as well....
-		contourFinder.findContours(grayImage, 10, (kinect.width*kinect.height)/2, 20, false);  
+		/*contourFinder.findContours(grayImage, 10, (kinect.width*kinect.height)/2, 20, false);  
 		int numBlobs = contourFinder.blobs.size();
 		for (int i = 0; i < numBlobs; ++i) {
 			ofxCvBlob & blob = contourFinder.blobs[i];
@@ -168,9 +168,9 @@ void ofApp::update() {
 			*posx = blob.centroid.x;
 			*posy = blob.centroid.y;
 
-		}
+		}*/
 
-		/*int numBlobs = keypoints.size();
+		int numBlobs = keypoints.size();
 		for (int i = 0; i < numBlobs; ++i) {
 			// ofxCvBlob & blob = keypoints[i];
 			//keypoints[i].pt.x
@@ -179,7 +179,7 @@ void ofApp::update() {
 			*posx = keypoints[i].pt.x;
 			*posy = keypoints[i].pt.y;
 
-		}*/
+		}
 	}
 	
 #ifdef USE_TWO_KINECTS
