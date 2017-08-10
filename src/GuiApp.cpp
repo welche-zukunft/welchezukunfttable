@@ -9,10 +9,11 @@
 
 void GuiApp::setup() {
 
+	ofSetDataPathRoot("../Resources/data/");
 
 	ofBackground(0,0,0);
 	ofSetVerticalSync(false);
-	font.loadFont("arial.ttf", 32);
+	font.load("fonts/open-sans/OpenSans-Regular.ttf", 32);
 }
 
 void GuiApp::update() {
